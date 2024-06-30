@@ -1,0 +1,59 @@
+<div class="toursadddiv">
+   
+<div class="tours">
+<div class="eachtour" *ngFor="let tour of tours">
+   
+    <p><b>{{tour.TourName}}: Kes {{tour.TourPrice}}</b></p>
+    
+    <p>{{tour.TourDescription}}</p>
+    <!-- <p>Location: {{tour.tourLocation}}</p>
+      <ng-container *ngIf="username === 'admin'">
+        <button class="updateTour" [attr.data-id]="tour.tourID">Update</button>
+        <br><br>
+        <button class="deleteTour" [attr.data-id]="tour.tourID">Delete</button>
+    </ng-container>
+    <button class="bookTour" [attr.data-id]="tour.tourID">Book Tour</button> -->
+</div>
+</div>
+<p>hhhhhhh</p>
+
+
+
+ <!-- <form (ngSubmit)="onAddTour()" [formGroup]='addTourForm'>
+        <div formGroupName="addToursdiv">
+          <div>
+            <label>tour Name</label>
+            <input type="text" formControlName="tourName">
+            <div *ngIf="addTourForm.get('addToursdiv.tourName')?.touched && !addTourForm.get('addToursdiv.username')?.valid">
+              <p *ngIf="addTourForm.get('addToursdiv.username')?.hasError('required')">tour name is required</p>
+            </div>
+          </div>
+    
+          <div>
+            <label>tour Image</label>
+            <input type="text" formControlName="tourImage">
+            <div *ngIf="addTourForm.get('addtoursdiv.TourImage')?.touched && !addTourForm.get('addToursdiv.tourImage')?.valid">
+              
+              <p *ngIf="addTourForm.get('addToursdiv.tourImage')?.hasError('tourImage')">tour image is required</p>
+            </div>
+          </div>
+    
+          <div>
+            <label>tour Location</label>
+            <input type="text" formControlName="tourLocation">
+            <div *ngIf="addTourForm.get('addToursdiv.tourLocation')?.touched && !addTourForm.get('addToursdiv.tourLocation')?.valid">
+              <p *ngIf="addTourForm.get('addToursdiv.tourLocation')?.hasError('required')">tour location is required</p>
+            </div>
+          </div>
+          <div>
+            <label>tour Description</label>
+            <input type="text" formControlName="tourDescription">
+            <div *ngIf="addTourForm.get('addToursdiv.tourDescription')?.touched && !addTourForm.get('addToursdiv.tourDescription')?.valid">
+              <p *ngIf="addTourForm.get('addToursdiv.tourDescription')?.hasError('required')">tour location is required</p>
+            </div>
+          </div>
+    
+        </div>
+        <input type="submit" value="Submit">
+      </form>
+    </div> -->

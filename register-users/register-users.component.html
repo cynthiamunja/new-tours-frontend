@@ -1,0 +1,32 @@
+<form (ngSubmit)="onRegisterUser()" [formGroup]='registerUserForm'>
+   
+      <div>
+        <label>User Name</label>
+        <input type="text" formControlName="UserName">
+        <div *ngIf="registerUserForm.get('registerUserForm.UserName')?.touched && !registerUserForm.get('registerUserForm.UserName')?.valid">
+          <p *ngIf="registerUserForm.get('registerUserForm.UserName')?.hasError('required')">user name is required</p>
+        </div>
+      </div>
+
+      <div>
+        <label>Email</label>
+        <input type="text" formControlName="Email">
+        <div *ngIf="registerUserForm.get('registerUserForm.Email')?.touched && !registerUserForm.get('registerUserForm.Email')?.valid">
+            <p *ngIf="registerUserForm.get('registerUserForm.Email')?.hasError('email')">Email is not Valid</p>
+          <p *ngIf="registerUserForm.get('registerUserForm.Email')?.hasError('required')">email name is required</p>
+        </div>
+      </div>
+
+      <div>
+        <label>Password</label>
+        <input type="text" formControlName="UserPassword">
+        <div *ngIf="registerUserForm.get('registerUserForm.UserPassword')?.touched && !registerUserForm.get('registerUserForm.UserPassword')?.valid">
+          <p *ngIf="registerUserForm.get('registerUserForm.UserPassword')?.hasError('required')">Password is required</p>
+        </div>
+      </div>
+
+    
+    <input type="submit" value="Submit">
+  </form>
+<br>
+<br><br>

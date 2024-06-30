@@ -1,0 +1,52 @@
+
+
+
+<div class="header">
+  <div class="leftheader">
+      <img src="./images/icons8-location-50.png" alt="locationicon">
+              <h3>Travel And Tours</h3>
+      </div>
+  <div class="rightheader">
+     <p ><a routerLink="/register"style="color: white;" *ngIf="!auth.showStatus()"  routerLinkActive="active"> Register</a></p>
+     <p ><a routerLink="/addhotels"style="color: white;" *ngIf="auth.showStatus()"  routerLinkActive="active">addhotel</a></p>
+     <p ><a routerLink="/addTours"style="color: white;" *ngIf="auth.showStatus()"  routerLinkActive="active">addTours</a></p>
+     <p ><a routerLink="/tours"style="color: white;" *ngIf="auth.showStatus()"  routerLinkActive="active">Tours</a></p>
+     
+     <p ><a routerLink="/hotels"style="color: white;" *ngIf="auth.showStatus()"  routerLinkActive="active">hotels</a></p>
+     
+    <p> <a [routerLink]="['login']" routerLinkActive="active"  *ngIf="!auth.showStatus()" style="color: white;">Login</a></p>
+    <p> <a routerLink="" (click)="auth.logout()" *ngIf="auth.showStatus()" style="color: white;">Logout</a></p>
+     <p><a href="#footer"style="color: white;"> Contact Us</a></p>
+     <p id="displayusername" style="margin-left: 10%;"></p>
+     
+      <!-- <img src="dashboard icon" alt="dashboardicon">
+        
+      <p>My Dashboard</p> -->
+  </div>
+</div>
+<router-outlet></router-outlet>
+ <!--
+<app-tours></app-tours>
+<br>
+<app-hotels></app-hotels>
+
+ <div class="footer" id="footer">
+  <div class="getintouch">
+      <h4 >Get In Touch</h4>
+          <a href=""> 123 Street, nyeri,kenya</a><br><br>
+          <a href=""> info example.com</a><br><br>
+          <a href=""> +012 345 67890</a><br><br>
+          <a href=""> +012 345 67890</a><br><br><br><br>
+          <img src="./images/icons8-instagram-48.png" alt="instagramicon">
+          <img src="./images/icons8-twitter-48.png" alt="twittericon">
+          <img src="./images/icons8-facebook-48.png" alt="facebookicon">
+     
+  </div>
+  <div class="paymentoptionsfooter">
+      <p><b>Payment Options</b></p><br><br><br>
+      <img src="./images/icons8-visa-card-50.png" alt="visacard">
+      <img src="./images/icons8-paypal-48.png" alt="paypal">
+      <img src="./images/icons8-master-card-96.png" alt="mastercard">
+      <img src="./images/icons8-card-50.png" alt="card">
+  </div>
+</div> -->

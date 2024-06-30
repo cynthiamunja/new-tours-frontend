@@ -1,0 +1,16 @@
+.hotels{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(30%, 1fr));
+    column-gap: 2%;
+    row-gap: 2%;
+    padding: 5%;
+    
+}
+.hotels img{
+    width: 90%;
+}
+.hotelsadddiv{
+    width: 30%;
+    background-color: aquamarine;
+
+}

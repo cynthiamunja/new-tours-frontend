@@ -1,0 +1,39 @@
+
+  <form (ngSubmit)="onAddTour()" [formGroup]='addTourForm'>
+        <div >
+          <div>
+            <label>Tour Name</label>
+            <input type="text" formControlName="TourName">
+            <div *ngIf="addTourForm.get('addTourForm.TourName')?.touched && !addTourForm.get('addTourForm.TourName')?.valid">
+              <p *ngIf="addTourForm.get('addTourForm.TourName')?.hasError('required')">tour name is required</p>
+            </div>
+          </div>
+    
+          <div>
+            <label>tour Price</label>
+            <input type="number" formControlName="TourPrice">
+            <div *ngIf="addTourForm.get('addTourForm.TourPrice')?.touched && !addTourForm.get('addTourForm.TourPrice')?.valid">
+              
+              <p *ngIf="addTourForm.get('addTourForm.TourPrice')?.hasError('TourPrice')">tour Price is required</p>
+            </div>
+          </div>
+    
+          <!-- <div>
+            <label>tour Location</label>
+            <input type="text" formControlName="tourLocation">
+            <div *ngIf="addTourForm.get('addTourForm.tourLocation')?.touched && !addTourForm.get('addTourForm.tourLocation')?.valid">
+              <p *ngIf="addTourForm.get('addTourForm.tourLocation')?.hasError('required')">tour location is required</p>
+            </div>
+          </div>
+          <div> -->
+            <label>tour Description</label>
+            <input type="text" formControlName="TourDescription">
+            <div *ngIf="addTourForm.get('addTourForm.tourDescription')?.touched && !addTourForm.get('addTourForm.tourDescription')?.valid">
+              <p *ngIf="addTourForm.get('addTourForm.tourDescription')?.hasError('required')">tour DESCRIPTION is required</p>
+            </div>
+          </div>
+    
+       
+        <input type="submit" value="Submit">
+      </form>
+   

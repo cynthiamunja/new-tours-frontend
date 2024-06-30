@@ -1,0 +1,37 @@
+<form (ngSubmit)="onAddHotel()" [formGroup]='addHotelForm'>
+    
+      <div>
+        <label>Hotel Name</label>
+        <input type="text" formControlName="HotelName">
+        <div *ngIf="addHotelForm.get('addHotelForm.HotelName')?.touched && !addHotelForm.get('addHotelForm.HotelName')?.valid">
+          <p *ngIf="addHotelForm.get('addHotelForm.HotelName')?.hasError('required')">hotel name is required</p>
+        </div>
+      </div>
+
+      <!-- <div>
+        <label>Hotel Image</label>
+        <input type="text" formControlName="hotelImage">
+        <div *ngIf="addHotelForm.get('addHotelForm.hotelImage')?.touched && !addHotelForm.get('addHotelForm.hotelImage')?.valid">
+          
+          <p *ngIf="addHotelForm.get('addHotelForm.hotelImage')?.hasError('hotelImage')">Hotel image is required</p>
+        </div>
+      </div> -->
+
+      <div>
+        <label>Hotel price</label>
+        <input type="number" formControlName="HotelPrice">
+        <div *ngIf="addHotelForm.get('addHotelForm.HotelPrice')?.touched && !addHotelForm.get('addHotelForm.HotelPrice')?.valid">
+          <p *ngIf="addHotelForm.get('addHotelForm.HotelPrice')?.hasError('required')">hotel Price is required</p>
+        </div>
+      </div>
+      <div>
+        <label>Hotel Description</label>
+        <input type="text" formControlName="HotelDescription">
+        <div *ngIf="addHotelForm.get('addHotelForm.HotelDescription')?.touched && !addHotelForm.get('addHotelForm.HotelDescription')?.valid">
+          <p *ngIf="addHotelForm.get('addHotelForm.HotelDescription')?.hasError('required')">hotel Description is required</p>
+        </div>
+      </div>
+
+    
+    <input type="submit" value="Submit">
+  </form>
