@@ -1,54 +1,23 @@
-<div class="hotelsadddiv">
-<!-- <form (ngSubmit)="onAddHotel()" [formGroup]='addHotelForm'>
-    <div formGroupName="addhotelsdiv">
-      <div>
-        <label>Hotel Name</label>
-        <input type="text" formControlName="hotelName">
-        <div *ngIf="addHotelForm.get('addhotelsdiv.hotelName')?.touched && !addHotelForm.get('addhotelsdiv.username')?.valid">
-          <p *ngIf="addHotelForm.get('addhotelsdiv.username')?.hasError('required')">hotel name is required</p>
-        </div>
-      </div>
+<div class="hotels" *ngIf="Hotels">
+  <div class="eachhotel" *ngFor="let hotel of Hotels">
 
-      <div>
-        <label>Hotel Image</label>
-        <input type="text" formControlName="hotelImage">
-        <div *ngIf="addHotelForm.get('addhotelsdiv.hotelImage')?.touched && !addHotelForm.get('addhotelsdiv.hotelImage')?.valid">
-          
-          <p *ngIf="addHotelForm.get('addhotelsdiv.hotelImage')?.hasError('hotelImage')">Hotel image is required</p>
-        </div>
-      </div>
-
-      <div>
-        <label>Hotel Location</label>
-        <input type="text" formControlName="hotelLocation">
-        <div *ngIf="addHotelForm.get('addhotelsdiv.hotelLocation')?.touched && !addHotelForm.get('addhotelsdiv.hotelLocation')?.valid">
-          <p *ngIf="addHotelForm.get('addhotelsdiv.hotelLocation')?.hasError('required')">hotel location is required</p>
-        </div>
-      </div>
-      <div>
-        <label>Hotel Description</label>
-        <input type="text" formControlName="hotelDescription">
-        <div *ngIf="addHotelForm.get('addhotelsdiv.hotelDescription')?.touched && !addHotelForm.get('addhotelsdiv.hotelDescription')?.valid">
-          <p *ngIf="addHotelForm.get('addhotelsdiv.hotelDescription')?.hasError('required')">hotel location is required</p>
-        </div>
-      </div>
-
+    <p><b>{{hotel.HotelName}}</b></p>
+    <p>Kes {{hotel.HotelPrice}}</p>
+    <p>Location: {{hotel.HotelDescription}}</p>
+    <div *ngIf="username ==='admin'">
+      <input type="submit" value="update">
     </div>
-    <input type="submit" value="Submit">
-  </form> -->
+  </div>
 </div>
-<div class="hotels" *ngIf= "Hotels" >
-    <div class="eachhotel" *ngFor="let hotel of Hotels">
-       
-        <p><b>{{hotel.HotelName}}</b></p>
-        <p>Kes {{hotel.HotelPrice}}</p>
-        <p>Location: {{hotel.HotelDescription}}</p>
-       <!--  <ng-container *ngIf="username === 'admin'">
-            <button class="updatehotel" [attr.data-id]="hotel.hotelID">Update</button>
-            <br><br>
-            <button class="deletehotel" [attr.data-id]="hotel.hotelID">Delete</button>
-        </ng-container>
-        <button class="bookhotel" [attr.data-id]="hotel.hotelID">Book hotel</button>
-    </div>
-    </div> <img [src]="hotel.hotelImage" alt="hotel Image">      <p>Location: {{hotel.hotelLocation}}</p>-->
-    
+
+<input type="checkbox" (change)="onChange()" value= "showParagraph$ | async">
+<p *ngIf="showParagraph | async"> show paragraph</p>
+<br>
+<br />
+<button (click)="onIncrement()">+</button>
+
+<h1>{{count$ | async }}</h1>
+<button  (click)="onDecrement()">-</button>
+<br />
+
+<button  (click)="onReset()">Reset</button>

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { AddtoursService } from '../services/addtours.service';
 import { CommonModule } from '@angular/common';
+import { jwtDecode } from 'jwt-decode';
 
 @Component({
   selector: 'app-add-tours',
@@ -13,12 +14,21 @@ import { CommonModule } from '@angular/common';
 export class AddToursComponent implements OnInit{
 
   addTourForm!:FormGroup
+  email:string=''
+  username:string=''
   constructor( private addtoursservice:AddtoursService){}
 
   ngOnInit():void{
-  this.addTourForm=new FormGroup({
-    
 
+    const token= localStorage.getItem('token') as string
+    if (token){
+      const decode:any= jwtDecode(token)
+      this.email=decode.Email
+      this.username=decode.UserName
+      console.log(this.email)
+      
+    }
+  this.addTourForm=new FormGroup({
       TourName: new FormControl(null, [Validators.required]),
       TourPrice: new FormControl(null, [Validators.required]),
       TourDescription: new FormControl(null, Validators.required)

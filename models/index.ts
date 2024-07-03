@@ -6,6 +6,13 @@ export interface addUser{
     UserPassword:string
 }
 
+export interface loginUser{
+
+    
+    Email:string,
+    UserPassword:string
+}
+
 export interface registerResponse{
     message:string 
 }

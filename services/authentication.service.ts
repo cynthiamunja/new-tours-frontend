@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { addUser, loginReq, loginResponse, registerResponse } from '../models';
+import { addUser, loginUser, loginResponse, registerResponse } from '../models';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -16,7 +16,7 @@ export class AuthenticationService {
 
   }
 
-  login(user:loginReq):Observable<loginResponse>{
+  login(user:loginUser):Observable<loginResponse>{
     return this.http.post<loginResponse>(this.baseURL+"login", user)
   }
 }

@@ -8,8 +8,8 @@
       </div>
   <div class="rightheader">
      <p ><a routerLink="/register"style="color: white;" *ngIf="!auth.showStatus()"  routerLinkActive="active"> Register</a></p>
-     <p ><a routerLink="/addhotels"style="color: white;" *ngIf="auth.showStatus()"  routerLinkActive="active">addhotel</a></p>
-     <p ><a routerLink="/addTours"style="color: white;" *ngIf="auth.showStatus()"  routerLinkActive="active">addTours</a></p>
+     <p ><a routerLink="/addhotels"style="color: white;" *ngIf="username ==='admin' "  routerLinkActive="active">addhotel</a></p>
+     <p ><a routerLink="/addTours"style="color: white;" *ngIf="username ==='admin'"  routerLinkActive="active">addTours</a></p>
      <p ><a routerLink="/tours"style="color: white;" *ngIf="auth.showStatus()"  routerLinkActive="active">Tours</a></p>
      
      <p ><a routerLink="/hotels"style="color: white;" *ngIf="auth.showStatus()"  routerLinkActive="active">hotels</a></p>

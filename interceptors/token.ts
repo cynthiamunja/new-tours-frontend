@@ -6,7 +6,7 @@ export function TokenInterceptor(req: HttpRequest<unknown>, next: HttpHandlerFn)
         return next(req)
     }else{
      const token = localStorage.getItem('token') as string
-    const modifiedRequest= req.clone({headers:new HttpHeaders().append('token', token)})
+    const modifiedRequest= req.clone({headers:new HttpHeaders().append('authorization', `Bearer ${token}`)})
     return next(modifiedRequest);
     }
   }

@@ -6,6 +6,7 @@ import { Router } from 'express';
 
 import { AddhotelsService } from '../services/addhotels.service';
 import { hotel } from '../models/hotels';
+import { jwtDecode } from 'jwt-decode';
 
 @Component({
   selector: 'app-addhotel',
@@ -35,11 +36,22 @@ export class AddhotelComponent {
   //   }
   // ]
   addHotelForm! :FormGroup
+  email:string=''
+  username:string=''
 
   constructor(private fb:FormBuilder, private addhotelservice:AddhotelsService){}
  Hotels:hotel[]=[]
   
   ngOnInit():void{
+    const token= localStorage.getItem('token') as string
+    if (token){
+      const decode:any= jwtDecode(token)
+      this.email=decode.Email
+      this.username=decode.UserName
+      console.log(this.email)
+      
+    }
+
     this.addHotelForm=this.fb.group({
      
 
@@ -53,6 +65,7 @@ export class AddhotelComponent {
   }
 
   onAddHotel() {
+    
     const hotelData = this.addHotelForm.value;
     this.addhotelservice.postHotel(hotelData).subscribe(res => {
       console.log(res);
